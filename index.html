@@ -18,7 +18,7 @@
     <main>
         <div class="container">
             <form action="#" method="post"></form>
-            <label for="coinMain">Converte <span>DE</span></label>
+            <label for="coinMain">Converter <span>DE</span></label>
             <select name="coinMain" id="coinMain">
                 <option value="BRL">R$ Real Brasileiro</option>
                 <option value="USD">$ Dolar Americano</option>
@@ -30,24 +30,24 @@
             <select name="coinSeccond" id="coinSeccond">
                 <option value="USD">$ Dolar Americano</option>
                 <option value="BRL">R$ Real Brasileiro</option>
-                <option value="GBP">£ Libra Esterlina </option>
+                <option value="GBP">£ Libra Esterlina</option>
                 <option value="EUR">€ Euro</option>
             </select>
 
             <label for="coinMain">Valor</label>
-            <input type="text" name="currency-field" id="currency-field" placeholder="R$10.000,00">
-            <button>Converter</button>
+            <input type="text" name="currency-field" id="currencyField" placeholder="R$10.000,00">
+            <button type="submit" onclick="main()">Converter</button>
             </form>
 
-            <div class="result">
-                <div class="coinMain">
-                    <img src="assets/BRL.png" alt="Icone moedas">
-                    <h5>Real</h5>
-                    <h2>R$0</h2>
-                    <img src="assets/arrow.png" alt="Icone seta">
-                    <img src="assets/USD.png" alt="Icone moedas">
-                    <h5>Dolar Americano</h5>
-                    <h2>$0</h2>
+            <div class="containeResult">
+                <div class="result">
+                    <img src="assets/BRL.png" alt="Icone moedas" id="iconCoinOne">
+                    <h5 id="nameCoinOne">Real</h5>
+                    <h3 id="resultCoinOne">R$0</h3>
+                    <img src="assets/arrow.png" alt="Icone seta" >
+                    <img src="assets/USD.png" alt="Icone moedas" id="iconCoinTwo">
+                    <h5 id="nameCoinTwo">Dolar Americano</h5>
+                    <h3 id="resultCoinTwo">$0</h3>
                 </div>
             </div>
         </div>
