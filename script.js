@@ -42,7 +42,7 @@ async function request(coinOne, coinTwo, key) {
     return price;
   } catch (error) {
     console.error("Erro na requisição | Bad Request:", error);
-    throw error; // Rejoga o erro para que o chamador possa lidar com ele, se necessário
+    throw error; 
   }
 }
 
