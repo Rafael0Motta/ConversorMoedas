@@ -1,4 +1,4 @@
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     main();
   }
@@ -42,13 +42,14 @@ async function request(coinOne, coinTwo, key) {
     return price;
   } catch (error) {
     console.error("Erro na requisição | Bad Request:", error);
-    throw error; 
+    throw error;
   }
 }
 
 function makeCount(valueCurrency, requestResult) {
   let result = valueCurrency * requestResult;
   result = result.toFixed(2);
+  console.log(requestResult);
   return result;
 }
 
@@ -66,22 +67,34 @@ function showResult(coinOne, coinTwo, valueCurrency, result) {
     case "BRL":
       iconCoinOne.setAttribute("src", "assets/BRL.png");
       nameCoinOne.innerHTML = "Real Brasileiro";
-      showCoinOneResult.innerHTML = `R$ ${valueCurrency}`;
+      showCoinOneResult.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(valueCurrency);
       break;
     case "EUR":
       iconCoinOne.setAttribute("src", "assets/EUR.png");
       nameCoinOne.innerHTML = "Euro";
-      showCoinOneResult.innerHTML = `${valueCurrency} €`;
+      showCoinOneResult.innerHTML = new Intl.NumberFormat("pt-PT", {
+        style: "currency",
+        currency: "EUR",
+      }).format(valueCurrency);
       break;
     case "USD":
       iconCoinOne.setAttribute("src", "assets/USD.png");
       nameCoinOne.innerHTML = "Dolar Americano";
-      showCoinOneResult.innerHTML = `US$ ${valueCurrency}`;
+      showCoinOneResult.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(valueCurrency);
       break;
     case "GBP":
       iconCoinOne.setAttribute("src", "assets/GBP.png");
       nameCoinOne.innerHTML = "Libra Esterlina";
-      showCoinOneResult.innerHTML = `£ ${valueCurrency}`;
+      showCoinOneResult.innerHTML = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+      }).format(valueCurrency);
       break;
 
     default:
@@ -92,22 +105,34 @@ function showResult(coinOne, coinTwo, valueCurrency, result) {
     case "BRL":
       iconCoinTwo.setAttribute("src", "assets/BRL.png");
       nameCoinTwo.innerHTML = "Real Brasileiro";
-      showCoinTwoResult.innerHTML = `R$ ${result}`;
+      showCoinTwoResult.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(result);
       break;
     case "EUR":
       iconCoinTwo.setAttribute("src", "assets/EUR.png");
       nameCoinTwo.innerHTML = "Euro";
-      showCoinTwoResult.innerHTML = `${result} €`;
+      showCoinTwoResult.innerHTML = new Intl.NumberFormat("pt-PT", {
+        style: "currency",
+        currency: "EUR",
+      }).format(result);
       break;
     case "USD":
       iconCoinTwo.setAttribute("src", "assets/USD.png");
       nameCoinTwo.innerHTML = "Dolar Americano";
-      showCoinTwoResult.innerHTML = `US$ ${result}`;
+      showCoinTwoResult.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(result);
       break;
     case "GBP":
       iconCoinTwo.setAttribute("src", "assets/GBP.png");
       nameCoinTwo.innerHTML = "Libra Esterlina";
-      showCoinTwoResult.innerHTML = `£ ${result}`;
+      showCoinTwoResult.innerHTML = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+      }).format(result);
       break;
 
     default:
