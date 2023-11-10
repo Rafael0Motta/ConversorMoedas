@@ -1,3 +1,9 @@
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    main();
+  }
+});
+
 async function main() {
   const key = "5258|TsIJpgtnKVMZSWr1BqFgySAP1cidZ1WA";
 
@@ -36,7 +42,7 @@ async function request(coinOne, coinTwo, key) {
     return price;
   } catch (error) {
     console.error("Erro na requisição | Bad Request:", error);
-    throw error; 
+    throw error; // Rejoga o erro para que o chamador possa lidar com ele, se necessário
   }
 }
 
